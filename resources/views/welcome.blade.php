@@ -1,95 +1,111 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Mito's Barber</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css') }}">
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+		<div class="wrapper">
+			<header>
+				<nav>					
+					<div class="logo">Mito's</div>
+					<div class="menu">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#footer">Contatos</a></li>
+						<li><a class="active" href="/register">Agendamento</a></li>
+					</ul>
+					</div>
+				</nav>
+			</header>
+		</div>
 
-        <title>Laravel</title>
+<section class="sec1">
+	<figcaption><h3>Mito's Barber</h3></figcaption>
+</section>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+<section class="cont">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
+	<div class="titulo">Mitos em:</div>
+	<div class="quadros">
+		<div class="medida">
+			<section class="servs">
+				<img class="obra" src="img\barba.jpg"/>
+				<h2>Barba</h2>
+				<p>Profissionais especialistas em todos os tipos de barbas.</p>
+				<p>Dos modelos Vintage da moda aos agocêntricos Mustaches, é só falar que nossa equipe faz!</p>
+			</section>
+		</div>
+		<div class="medida">
+			<section class="servs">
+				<img class="obra" src="img\cabelo.jpg">
+				<h2>Cabelo</h2>
+				<p>De cortes a tingimentos, nós sabemos o que fazer</p>
+				<p>Quer aquele degradê estiloso, ou a manutenção da cabeleira longa? Ajeitar o topete? Vai de Dreads? Você é quem manda!</p>
+			</section>
+		</div>	
+	</div>
+
+
+
+</section>	
+
+
+<section id="footer" class="footer">
+	<div class="dados">
+	<section class="cima">
+		<div class="social">
+			<h4 class="social">Redes</h4>
+			<p>
+				<a href="https://www.facebook.com/equipesolucoesinteligentes/" target="_blank">Facebook/MitosBarber</a><br/><br/>
+				<a href="https://www.instagram.com/equipesolucoes/" target="_blank">Instagram/MitosBarber</a>
+			</p>
+		</div>
+		<div class="mail">
+			<h4 class="mail">Email</h4>
+			<p>
+				mitos@barbershop.com
+			</p>
+		</div>
+	</section>
+	<section class="baixo">
+		<div class="tel">
+			<h4 class="tel">Telefones</h4>
+			<p>
+				(11) 2137-5818 <br />
+				(11) 2137-5840 <br />
+				(11) 99262-2079 WhatsApp
+			</p>
+		</div>
+		<div class="end">
+			<h4 class="end">Endereço</h4>
+			<p>
+				Rua Rosali, 520 <br />
+				Vila Maranduba - Guarulhos, SP
+			</p>
+		</div>
+	</section>	
+	</div>
+</section>
+
+<script type="text/javascript">
+
+	  // Scrolling
+      $(window).on("scroll", function() {
+            if($(window).scrollTop()) {
+                  $('nav').addClass('black');
             }
 
-            .full-height {
-                height: 100vh;
+            else {
+                  $('nav').removeClass('black');
             }
+      })
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
 
-            .position-ref {
-                position: relative;
-            }
+</script>
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
+</body>
 </html>
