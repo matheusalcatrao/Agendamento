@@ -15,11 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/login', ['uses' => 'UsuarioController@login']);
-Route::get('/cadastro', ['uses' => 'UsuarioController@cadastro']);
+//Route::get('/cadastro', ['uses' => 'UsuarioController@cadastro']);
 Route::post('/usuario/cadastro', ['uses' => 'UsuarioController@CadastroUsuario'])->name('usu.cadastro');
+
+Route::post('/usuario/login', ['uses' => 'UsuarioController@LoginUsuario'])->name('usu.login');
 Route::post('/usuario/cadastro', ['uses' => 'UsuarioController@CadastroUsuario'])->name('usu.cadastro');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

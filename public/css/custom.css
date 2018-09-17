@@ -1,0 +1,223 @@
+@charset "UTF-8";
+
+body{
+	padding: 0;
+	margin: 0;
+	background-color: rgb(250, 240, 240);
+}
+
+section.sec1{
+	margin:0;
+	background:url(../img/BG.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+figcaption{
+	padding: 210px;
+	margin: 0;
+	text-align: center;
+	font-size: 70px;
+	font-family: Maiandra GD;
+	color: white;
+	background-color: rgba(40, 15, 15, .6);
+}
+
+.cont{
+	margin: 10px auto;
+	max-width: 100%;
+}
+
+/*Adicionar medidas por tela @media*/
+
+
+.quadros{
+	justify-content: center;
+	display: flex;
+	width: 100%;
+}
+
+.medida{
+	width: 40%;
+}
+
+.servs{
+	text-align: center;
+	margin: 5px;
+}
+.servs h2{
+	font-family: Maiandra GD;
+	font-size: 22px;
+	text-align: center;
+	color: rgb(40, 0, 0);
+}
+.servs p{
+	font-family: Maiandra GD;
+	font-size: 16px;
+}
+
+.obra{
+	display: block;
+	width: 100%;
+	margin: 0 0 0 10px;
+}
+
+.titulo{
+	font-family: Maiandra GD;
+	font-size: 30px;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+nav{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 10px;
+	padding: 10px 100px;
+	box-sizing: border-box;
+	transition: .3s;
+}
+
+nav.black{
+	background: rgba(0, 0, 0, 0.7);
+	height: 60px;
+	padding: 10px 100px;
+}
+
+.logo{
+	padding: 5px 0px;
+	height: 0px;
+	float: left;
+	font-size: 22px;
+	transition: .3s;
+	color: white;
+	font-family: Maiandra GD;
+
+}
+
+nav ul{
+	list-style: none;
+	float: right;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+nav ul li{
+	list-style: none;
+}
+
+nav ul li a{
+	line-height: 40px;
+	color: white;
+	font-size: 18px;
+	padding: 12px 30px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: Nyala;
+}
+
+nav ul li a:hover{
+	color: rgb(40, 0, 0);
+	transition: .5s;
+}
+
+nav ul li a.active{
+	background: lightgray;
+	color: rgb(30, 0, 0);
+	border-radius: 12px;
+	transition: 1s;
+}
+
+nav ul li a.active:hover{
+	background-color: rgb(40, 0, 0);
+	color: lightgray;
+	transition: .4s;
+}
+
+#footer {
+	background-color: rgb(30, 0, 0);
+	margin: 0px;
+	display: inline-flex;
+	width: 100%;
+}
+
+#footer div h4 {
+	color: rgb(100, 100, 100);
+	font-family: Nyala;
+	font-size: 22px;
+	margin-top: 3px;
+}
+
+#footer div p{
+	color: rgb(100, 100, 100);
+}
+
+
+.social a{
+	text-decoration: none;
+	color: rgb(100, 100, 100);
+	font-size: 16px;
+}
+
+.social a:hover{
+	color: white;
+	text-decoration: underline;
+	transition: 1.5s;
+}
+
+.dados{
+	display: flex;
+}
+
+
+
+div.social{
+	height: 130px;
+	width: 250px;
+	text-align: center;
+	border: solid 2px rgb(100, 100, 100);
+	border-radius: 10px;
+	margin-top: 5px;
+}
+
+div.mail{
+	height: 130px;
+	width: 250px;
+	text-align: center;
+	border: solid 2px rgb(100, 100, 100);
+	border-radius: 10px;
+	margin-top: 5px;
+}
+
+div.tel{
+	height: 130px;
+	width: 250px;
+	text-align: center;
+	border: solid 2px rgb(100, 100, 100);
+	border-radius: 10px;
+	margin-top: 5px;
+}
+
+div.end{
+	height: 130px;
+	width: 250px;
+	text-align: center;
+	border: solid 2px rgb(100, 100, 100);
+	border-radius: 10px;
+	margin-top: 5px;
+}
+
+
+section .cima{
+	padding: 10px 2px 2px 5px;
+	display: inline-block;
+}
+
+section .baixo{
+	display: inline-block;
+	padding: 10px 2px 2px 5px;
+}
