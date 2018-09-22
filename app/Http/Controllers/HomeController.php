@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $servicos = \DB::table('servicos')->select('*')->get();
+        //dd($servicos);
+
+        return view('welcome')->with('servicos',$servicos);
     }
 }

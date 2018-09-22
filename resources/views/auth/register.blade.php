@@ -90,7 +90,7 @@
                             var conf_senha = form1.conf_senha.value;
 
                             if (senha != conf_senha){
-                                alert('Senhas diferentes senha ');
+                                alert('Senhas diferentes');
                                 return false;
                             }else{
                                 return true;
