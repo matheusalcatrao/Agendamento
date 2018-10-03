@@ -20,6 +20,7 @@ Route::post('/usuario/cadastro', ['uses' => 'UsuarioController@CadastroUsuario']
 Route::post('/usuario/login', ['uses' => 'UsuarioController@LoginUsuario'])->name('usu.login');
 Route::post('/usuario/cadastro', ['uses' => 'UsuarioController@CadastroUsuario'])->name('usu.cadastro');
 Route::get('/', ['uses' => 'ServicoController@CarregaServico']);
+Route::get('/servico/{id}', ['uses' => 'ServicoController@GravaTemporariio']);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

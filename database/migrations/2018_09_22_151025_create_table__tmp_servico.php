@@ -14,10 +14,11 @@ class CreateTableTmpServico extends Migration
     public function up()
     {
         Schema::create('TmpServicos', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('servico');
-            $table->float('valor');
-            $table->integer('id_prof');
+            $table->integer('id_servico');
+            $table->integer('id_prof')->nullable();
+            $table->integer('id_usuario')->nullable();
+            $table->date('date')->nullable();
+            $table->time('hora')->nullable();
         });
     }
 
