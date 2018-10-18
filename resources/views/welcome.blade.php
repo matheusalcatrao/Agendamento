@@ -5,18 +5,34 @@
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css') }}">
 	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>	
+	
+	<!-- <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/> -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+
 		<div class="wrapper">
 			<header>
-				<nav>					
+				<nav>			
 					<div class="logo">Mito's</div>
 					<div class="menu">
 					<ul>
 						<li><a href="#">Home</a></li>
 						<li><a href="#footer">Contatos</a></li>
-						<li><a class="active" href="/register">Agendamento</a></li>
+						
+						<li><a class="active" data-toggle="modal" href="{{ url('/servico') }}" onclick="CarregaServicos()" data-target="#exampleModalCenter">Agendamento</a></li>
+						
 					</ul>
 					</div>
 				</nav>
@@ -26,6 +42,9 @@
 <section class="sec1">
 	<figcaption><h3>Mito's Barber</h3></figcaption>
 </section>
+<div class="container">
+@include('include.modal')
+</div>
 
 <section class="cont">
 
@@ -55,8 +74,10 @@
 
 
 <section id="footer" class="footer">
+
 	<div class="dados">
 	<section class="cima">
+	
 		<div class="social">
 			<h4 class="social">Redes</h4>
 			<p>
@@ -89,23 +110,65 @@
 		</div>
 	</section>	
 	</div>
+
 </section>
 
 <script type="text/javascript">
 
-	  // Scrolling
-      $(window).on("scroll", function() {
-            if($(window).scrollTop()) {
-                  $('nav').addClass('black');
-            }
-
-            else {
-                  $('nav').removeClass('black');
-            }
-      })
-
-
+	// Scrolling
+	$(window).on("scroll", function() {
+		if($(window).scrollTop()) {
+		  $('nav').addClass('black');
+		}
+		else {
+		  $('nav').removeClass('black');
+		}
+    });
+	$(function () {
+		$('#datetimepicker4').datetimepicker({
+			format: 'L'
+        });
+	});
+	function CarregaServicos(){
+		$('#Servicos').show();
+		$('#Data').hide();
+	}
+	function CarregaDataHora(){
+		$('#exampleModalLongTitle').html('Data Hora');
+		//$('#Servicos').addClass('rollOut');
+		$('#Servicos').hide();
+		$('#Data').show();
+	}
+	var dados = [3];
+	$('button').click(function() {
+		var servico = $(this).val();
+		dados[0] = servico;
+		console.log(dados[0]);
+		
+	});
+	$('input').click(function () {
+		var data = $(this).val();
+		dados[1] = data;
+		console.log(dados[1]);
+	});
+	$('th').click(function () {
+		var hora = $(this).text();
+		dados[2] = hora;
+		console.log(dados[2]);
+		console.log(dados);
+		document.cookie = "servico="+dados[0];
+		document.cookie = "data="+dados[1];
+		document.cookie = "horario="+dados[2];
+	});
+	function Alert() {
+		alert('teste');
+		swal(
+		'Good job!',
+		'You clicked the button!',
+		'success'
+		);
+	}
+		
 </script>
-
 </body>
 </html>

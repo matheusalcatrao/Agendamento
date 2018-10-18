@@ -3,29 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Contracts\Auth\Authenticatable;
 
-
-class Usuario extends Model 
+class Profissional extends Model
 {
     //
-    //use Authenticatable;
-
-
     public $timestamps = true;
     public $incrementing = false;
     protected $fillable = [
         'id',
         'nome',
-        'senha',
-        'email',
-        'numero',
+        'especialidade',
     ];
 
 
-    protected $table = 'usuarios';
-
-    
-
-    
+    protected $table = 'Profissionais';
 }
