@@ -40,5 +40,6 @@ class UsuarioController extends Controller
 			return redirect()->back()->with('error', 'Falha login');
 		}
 	}
+
 	
 }

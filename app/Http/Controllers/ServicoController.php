@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Agendamento;
 
 class ServicoController extends Controller
 {
@@ -22,12 +23,38 @@ class ServicoController extends Controller
         return view('welcome',compact('servicos','tela')); 
     }
 
-    public function GravaTemporariio(Request $request, $id)  {
-        \DB::table('tmpservicos')->insert([
-            'id_servico' => $id
-        ]);
-        //return redirect()->route('inicial');
-        return $this->CarregaHorario();
+    public function GravaDados(Request $request)  {
+        $id_servico = $_COOKIE['servico'];
+        $data = $_COOKIE['data'];
+        $horario = $_COOKIE['horario'];
+        $oServicos = \DB::table('servicos')->select('servico','valor')->where('id',$id_servico)->get();
+        foreach ($oServicos as $obj) {
+            $serDescricao = $obj->servico;
+            $serValor     = $obj->valor;
+        }
+        $dados = [
+            'servico' => $serDescricao,
+            'valor'   => $serValor,
+            'data'    => $data,
+            'horario' => $horario, 
+            'usuario' => '',
+            'email'   => '',
+            'numero'  => '',
+        ];
+        $teste = [
+            'servico' => 'Barba',
+            'valor'   => '10',
+            'data'    => '10/18/2018',
+            'horario' => '01:09', 
+            'usuario' => '',
+            'email'   => '',
+            'numero'  => '',    
+        ];
+        
+        Agendamento::create($dados);
+        
+        
+        return $servico;
         
     }
 }

@@ -18,7 +18,6 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
-	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -126,10 +125,9 @@
 		}
     });
 	$(function () {
-		$('#datetimepicker13').datetimepicker({
-			inline: true,
-			sideBySide: true
-		});
+		$('#datetimepicker4').datetimepicker({
+			format: 'L'
+        });
 	});
 	function CarregaServicos(){
 		$('#Servicos').show();
@@ -137,9 +135,40 @@
 	}
 	function CarregaDataHora(){
 		$('#exampleModalLongTitle').html('Data Hora');
+		//$('#Servicos').addClass('rollOut');
 		$('#Servicos').hide();
 		$('#Data').show();
 	}
+	var dados = [3];
+	$('button').click(function() {
+		var servico = $(this).val();
+		dados[0] = servico;
+		console.log(dados[0]);
+		
+	});
+	$('input').click(function () {
+		var data = $(this).val();
+		dados[1] = data;
+		console.log(dados[1]);
+	});
+	$('th').click(function () {
+		var hora = $(this).text();
+		dados[2] = hora;
+		console.log(dados[2]);
+		console.log(dados);
+		document.cookie = "servico="+dados[0];
+		document.cookie = "data="+dados[1];
+		document.cookie = "horario="+dados[2];
+	});
+	function Alert() {
+		alert('teste');
+		swal(
+		'Good job!',
+		'You clicked the button!',
+		'success'
+		);
+	}
+		
 </script>
 </body>
 </html>

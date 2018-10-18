@@ -30,6 +30,7 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\Servico' => $baseDir . '/app/Servico.php',
+    'App\\TmpServicos' => $baseDir . '/app/TmpServicos.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\Usuario' => $baseDir . '/app/Usuario.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
