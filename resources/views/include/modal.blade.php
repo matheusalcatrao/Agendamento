@@ -17,12 +17,12 @@
 				</ul>
 				<span id="Data">
 				<div class="form-group">
-								<div class="input-group date" id="datetimepicker4" data-target-input="nearest">
-										<input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4"/>
-										<div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
-												<div class="input-group-text"><i class="fa fa-calendar"></i></div>
-										</div>
-								</div>
+					<div class="input-group date" id="datetimepicker4" data-target-input="nearest">
+						<input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4"/>
+						<div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
+							<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+						</div>
+					</div>
 				</div>
 				<table style="aligth: center">
 				<tr>
@@ -39,7 +39,7 @@
 					<th><li class="list-group-item list-group-item-action">18:00</li></th>
 				</tr>
 				</table>
-				<a id="btn_confirma" type="button" style="float: right;" class="btn btn-success"  onclick="Alert()">Confirmar</a>
+				<a id="btn_confirma" type="button" style="float: right;" class="btn btn-success"  onclick="Alert()" >Confirmar</a>
 				</span>
 				<!-- <div id="Date">
 					<div id="datepicker" data-date="12/03/2012"></div>

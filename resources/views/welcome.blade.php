@@ -18,6 +18,7 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.28.7/dist/sweetalert2.all.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -114,7 +115,13 @@
 </section>
 
 <script type="text/javascript">
-
+	var dados = [3];
+	var count = 0;
+	while(count < 3) {
+		dados[count] = "";
+		count = count + 1;
+	}
+	 
 	// Scrolling
 	$(window).on("scroll", function() {
 		if($(window).scrollTop()) {
@@ -133,13 +140,44 @@
 		$('#Servicos').show();
 		$('#Data').hide();
 	}
+	function Alert() {
+		var contaPosicao = 0;
+		var erro = false; 
+		while (contaPosicao < 3) {
+			if (dados[contaPosicao] == "") {
+				erro = true;
+				swal({
+				type: 'error',
+				title: 'Atenção',
+				text: 'Preencha todos os campos',
+				})
+			}
+			contaPosicao = contaPosicao + 1; 
+		};
+		if (erro == false) {
+		swal({
+		title: 'Confirmação',
+		text: "O serviço foi agendado",
+		type: 'success',
+		}).then((result) => {
+		if (result.value) {
+			count = 0
+			while(count < 3) {
+				dados[count] = "";
+				count = count + 1;
+			}
+			window.location.href = "/grava";
+		}
+		})
+		};
+	}
 	function CarregaDataHora(){
 		$('#exampleModalLongTitle').html('Data Hora');
 		//$('#Servicos').addClass('rollOut');
 		$('#Servicos').hide();
 		$('#Data').show();
 	}
-	var dados = [3];
+	
 	$('button').click(function() {
 		var servico = $(this).val();
 		dados[0] = servico;
@@ -160,14 +198,8 @@
 		document.cookie = "data="+dados[1];
 		document.cookie = "horario="+dados[2];
 	});
-	function Alert() {
-		alert('teste');
-		swal(
-		'Good job!',
-		'You clicked the button!',
-		'success'
-		);
-	}
+	
+
 		
 </script>
 </body>

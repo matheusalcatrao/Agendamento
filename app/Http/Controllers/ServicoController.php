@@ -41,20 +41,8 @@ class ServicoController extends Controller
             'email'   => '',
             'numero'  => '',
         ];
-        $teste = [
-            'servico' => 'Barba',
-            'valor'   => '10',
-            'data'    => '10/18/2018',
-            'horario' => '01:09', 
-            'usuario' => '',
-            'email'   => '',
-            'numero'  => '',    
-        ];
         
         Agendamento::create($dados);
-        
-        
-        return $servico;
-        
+        return redirect()->back();
     }
 }
