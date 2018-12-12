@@ -18,7 +18,7 @@
 				<span id="Data">
 				<div class="form-group">
 					<div class="input-group date" id="datetimepicker4" data-target-input="nearest">
-						<input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4"/>
+						<input id="val_data" type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4"/>
 						<div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
 							<div class="input-group-text"><i class="fa fa-calendar"></i></div>
 						</div>
@@ -26,17 +26,17 @@
 				</div>
 				<table style="aligth: center">
 				<tr>
-					<th> <li class="list-group-item list-group-item-action">10:00</li></th>
-					<th><li class="list-group-item list-group-item-action">11:00</li></th>
-					<th><li class="list-group-item list-group-item-action">12:00</li></th>
+					<th id="10"><li class="list-group-item list-group-item-action">10:00</li></th>
+					<th id="11"><li  class="list-group-item list-group-item-action">11:00</li></th>
+					<th id="12"><li class="list-group-item list-group-item-action">12:00</li></th>
 				</tr>
-					<th> <li class="list-group-item list-group-item-action">13:00</li></th>
-					<th><li class="list-group-item list-group-item-action">14:00</li></th>
-					<th><li class="list-group-item list-group-item-action">15:00</li></th>
+					<th id="13"><li class="list-group-item list-group-item-action">13:00</li></th>
+					<th id="14"><li class="list-group-item list-group-item-action">14:00</li></th>
+					<th id="15"><li class="list-group-item list-group-item-action">15:00</li></th>
 				<tr>
-				<th> <li class="list-group-item list-group-item-action">16:00</li></th>
-					<th><li class="list-group-item list-group-item-action">17:00</li></th>
-					<th><li class="list-group-item list-group-item-action">18:00</li></th>
+				<th> <li id="16" class="list-group-item list-group-item-action">16:00</li></th>
+					<th><li id="17" class="list-group-item list-group-item-action">17:00</li></th>
+					<th><li id="18" class="list-group-item list-group-item-action">18:00</li></th>
 				</tr>
 				</table>
 				<a id="btn_confirma" type="button" style="float: right;" class="btn btn-success"  onclick="Alert()" >Confirmar</a>

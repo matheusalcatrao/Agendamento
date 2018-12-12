@@ -133,7 +133,7 @@
     });
 	$(function () {
 		$('#datetimepicker4').datetimepicker({
-			format: 'L'
+			format: 'DD/MM/YYYY',
         });
 	});
 	function CarregaServicos(){
@@ -176,6 +176,62 @@
 		//$('#Servicos').addClass('rollOut');
 		$('#Servicos').hide();
 		$('#Data').show();
+		console.log('antes');
+		
+		ConsultaHorarios($('#val_data').text());
+	}
+
+	function ConsultaHorarios(input) {
+		console.log('valor ' + input);
+		$teste = {
+			"sData" : input
+		};
+		console.log("Teste Valor: =>" + $teste);
+		$.ajax({
+			url: '/ServicoController/ValidaHorario',
+			type: 'GET', 
+			dataType : "json",
+			data: $teste,
+			async: false,
+			success : function (result) {
+				//var objData = jQuery.parseJSON(result['data']);
+				var objResult = JSON.stringify(result);
+				var obj = JSON.parse(objResult);
+				try {
+					for(i=0; i<obj.retorno.length; i++){
+						var rData = obj.retorno[i].data;
+						var rHorario = obj.retorno[i].horario;
+						OcultaCampos(rData,rHorario);
+					}
+					//console.log('Retornou valor -' + obj.retorno[0].horario +'- ' + obj.retorno[3].horario);	
+				} catch (error) {
+					console.log('errrooouu');
+					RecarregaCampos();	
+				}
+				
+			}
+		});
+
+	}
+
+	function OcultaCampos( data, horario) {
+		console.log(horario);
+
+		if (data == $('input').val() ) {
+			var horario = horario.substring(0,2);
+			console.log('entrou '+ horario);
+			$('#'+horario).hide();
+		}else {
+			RecarregaCampos();
+		}
+		
+	}
+
+	function RecarregaCampos() {
+		for(i=10;i<=18;i++){
+			//console.log(i);	
+			$('#'+i).show();
+		}	
 	}
 	
 	$('button').click(function() {
@@ -185,9 +241,11 @@
 		
 	});
 	$('input').click(function () {
+		RecarregaCampos();
 		var data = $(this).val();
 		dados[1] = data;
 		console.log(dados[1]);
+		ConsultaHorarios(data);
 	});
 	$('th').click(function () {
 		var hora = $(this).text();

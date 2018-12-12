@@ -21,6 +21,7 @@ Route::post('/usuario/login', ['uses' => 'UsuarioController@LoginUsuario'])->nam
 Route::post('/usuario/cadastro', ['uses' => 'UsuarioController@CadastroUsuario'])->name('usu.cadastro');
 Route::get('/', ['uses' => 'ServicoController@CarregaServico']);
 Route::get('/grava', ['uses' => 'ServicoController@GravaDados']);
+Route::get('/ServicoController/ValidaHorario', ['uses' => 'ServicoController@ValidaHorario']);
 
 Auth::routes();
 
